@@ -5,11 +5,19 @@
   box-sizing: border-box;
 }
 
+:root {
+  --color-primary: #0ff0fc;
+  --color-secondary: #1a1a2e;
+  --color-accent: #ff2e63;
+  --color-bg: #232931;
+  --color-text: #ffffff;
+}
+
 body {
   font-family: "Inter", sans-serif;
   line-height: 1.6;
-  color: #333;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: var(--color-text);
+  background: var(--color-bg);
   min-height: 100vh;
 }
 
@@ -25,7 +33,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 0;
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--color-secondary);
   backdrop-filter: blur(10px);
   border-radius: 15px;
   margin: 1rem 0;
@@ -96,6 +104,7 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  color: var(--color-primary);
 }
 
 .hero-subtitle {
@@ -125,35 +134,38 @@ body {
 }
 
 .btn-primary {
-  background: linear-gradient(45deg, #ffd700, #ffed4e);
-  color: #333;
+  background: var(--color-primary);
+  color: var(--color-secondary);
+  border: none;
 }
 
 .btn-primary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3);
+  background: var(--color-accent);
+  color: var(--color-text);
 }
 
 .btn-secondary {
-  background: rgba(255, 255, 255, 0.2);
-  color: white;
-  border: 2px solid rgba(255, 255, 255, 0.3);
+  background: transparent;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
 }
 
 .btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.3);
-  transform: translateY(-3px);
+  background: var(--color-accent);
+  color: var(--color-text);
+  border-color: var(--color-accent);
 }
 
 .btn-outline {
   background: transparent;
-  color: white;
-  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
 }
 
 .btn-outline:hover {
-  background: rgba(255, 255, 255, 0.1);
-  transform: translateY(-2px);
+  background: var(--color-accent);
+  color: var(--color-text);
+  border-color: var(--color-accent);
 }
 
 .btn-small {
@@ -212,7 +224,7 @@ body {
   text-align: center;
   font-size: 2.5rem;
   font-weight: 700;
-  color: white;
+  color: var(--color-primary);
   margin-bottom: 3rem;
 }
 
@@ -314,8 +326,9 @@ body {
 .footer {
   text-align: center;
   padding: 2rem 0;
-  color: white;
+  color: var(--color-text);
   opacity: 0.8;
+  background: var(--color-secondary);
 }
 
 /* Modal */
@@ -465,4 +478,12 @@ body {
 /* Scroll suave */
 html {
   scroll-behavior: smooth;
+}
+
+a {
+  color: var(--color-accent);
+}
+
+a:hover {
+  color: var(--color-primary);
 }
