@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AutoHotkey Tools - Download Center</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="icon" type="image/png" href="favicon.png" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <div class="logo">
+          <i class="fas fa-tools"></i>
+          <h1>AutoHotkey Tools</h1>
+        </div>
+        <nav class="nav">
+          <a href="#home" class="nav-link active">Início</a>
+          <a href="#tools" class="nav-link">Ferramentas</a>
+          <a href="#about" class="nav-link">Sobre</a>
+        </nav>
+      </header>
+
+      <main class="main">
+        <section id="home" class="hero">
+          <div class="hero-content">
+            <h2 class="hero-title">Ferramentas Automatizadas</h2>
+            <p class="hero-subtitle">
+              Scripts AutoHotkey otimizados para melhorar sua produtividade
+            </p>
+            <div class="hero-buttons">
+              <button class="btn btn-primary" onclick="downloadFile()">
+                <i class="fas fa-download"></i>
+                Download Principal
+              </button>
+              <button class="btn btn-secondary" onclick="showTools()">
+                <i class="fas fa-list"></i>
+                Ver Todas as Ferramentas
+              </button>
+            </div>
+          </div>
+          <div class="hero-image">
+            <div class="floating-card">
+              <i class="fas fa-rocket"></i>
+              <h3>Rápido & Eficiente</h3>
+              <p>Automação inteligente</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="tools" class="tools-section">
+          <h2 class="section-title">Nossas Ferramentas</h2>
+          <div class="tools-grid">
+            <div class="tool-card">
+              <div class="tool-icon">
+                <i class="fas fa-gamepad"></i>
+              </div>
+              <h3>DeadSide Tool</h3>
+              <p>
+                Ferramenta especializada para DeadSide com funcionalidades
+                avançadas
+              </p>
+              <button
+                class="btn btn-outline"
+                onclick="downloadSpecific('deadsidetool')"
+              >
+                <i class="fas fa-download"></i>
+                Download
+              </button>
+            </div>
+            <div class="tool-card">
+              <div class="tool-icon">
+                <i class="fas fa-crosshairs"></i>
+              </div>
+              <h3>FAMAS 4x</h3>
+              <p>Script otimizado para precisão e performance em jogos FPS</p>
+              <button
+                class="btn btn-outline"
+                onclick="downloadSpecific('famas4x')"
+              >
+                <i class="fas fa-download"></i>
+                Download
+              </button>
+            </div>
+            <div class="tool-card">
+              <div class="tool-icon">
+                <i class="fas fa-cog"></i>
+              </div>
+              <h3>Versões Anteriores</h3>
+              <p>Acesso a todas as versões anteriores e atualizações</p>
+              <button class="btn btn-outline" onclick="showVersions()">
+                <i class="fas fa-history"></i>
+                Ver Versões
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <section id="about" class="about-section">
+          <div class="about-content">
+            <h2 class="section-title">Sobre o Projeto</h2>
+            <p>
+              Desenvolvemos ferramentas automatizadas usando AutoHotkey para
+              otimizar sua experiência em jogos e aumentar sua produtividade.
+              Nossos scripts são testados e otimizados para máxima eficiência.
+            </p>
+            <div class="features">
+              <div class="feature">
+                <i class="fas fa-shield-alt"></i>
+                <h4>Seguro</h4>
+                <p>Código limpo e seguro</p>
+              </div>
+              <div class="feature">
+                <i class="fas fa-bolt"></i>
+                <h4>Rápido</h4>
+                <p>Execução otimizada</p>
+              </div>
+              <div class="feature">
+                <i class="fas fa-sync"></i>
+                <h4>Atualizado</h4>
+                <p>Versões regulares</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <p>&copy; 2024 AutoHotkey Tools. Todos os direitos reservados.</p>
+      </footer>
+    </div>
+
+    <!-- Modal para versões -->
+    <div id="versionsModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Versões Disponíveis</h2>
+        <div class="versions-list">
+          <div class="version-item">
+            <span>DeadSide v1.1.1</span>
+            <button
+              class="btn btn-small"
+              onclick="downloadVersion('deadside1.1.1')"
+            >
+              Download
+            </button>
+          </div>
+          <div class="version-item">
+            <span>DeadSide v1.1</span>
+            <button
+              class="btn btn-small"
+              onclick="downloadVersion('deadside1.1')"
+            >
+              Download
+            </button>
+          </div>
+          <div class="version-item">
+            <span>DeadSide v1.0.1</span>
+            <button
+              class="btn btn-small"
+              onclick="downloadVersion('deadside1.0.1')"
+            >
+              Download
+            </button>
+          </div>
+          <div class="version-item">
+            <span>DeadSide v1.0</span>
+            <button
+              class="btn btn-small"
+              onclick="downloadVersion('deadside1.0')"
+            >
+              Download
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
